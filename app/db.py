@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 import os
 
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql://root:LaigZMXsxAZMRENjfrVUgLtyysZbByXn@mysql.railway.internal:3306/railway")
+DATABASE_URL = os.getenv("DATABASE_URL", "mysql+aiomysql://root:LaigZMXsxAZMRENjfrVUgLtyysZbByXn@mysql.railway.internal:3306/railway")
 
 engine = create_async_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
